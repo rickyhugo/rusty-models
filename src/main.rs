@@ -2,6 +2,9 @@ use csv::{Reader, ReaderBuilder};
 use ndarray::{Array1, Array2};
 use std::fs::File;
 // use ndarray_csv::Array2Reader;
+// packages: polar (pandas), smartcore (scikit-learn)
+// sudoku, game of life
+// tests
 
 #[derive(Debug)]
 struct DataFrame {
@@ -54,12 +57,10 @@ impl DataFrame {
 }
 
 fn main() {
-    // read data@@
     let path = "data/data.csv";
     let data = DataFrame::read_csv(path, true);
     println!("{:?}", data.n_cols);
 
-    // least squares
     let vec1 = vec![1, 2, 3, 4];
     let vec2: Vec<i32> = vec![2, 2];
     let mat = Array2::from_shape_vec((2, 2), vec1).unwrap();
